@@ -1,32 +1,27 @@
-# Prerequisites
-*.d
+#include <iostream>
+using namespace std;
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
+int main() {
+    int n;
+    cin >> n;
+    
+    int a[n];
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+    
+    int k;
+    cin >> k;
+    
+    int temp = a[0];
+    for (int i = 0; i < k - 1; i++) {
+        a[i] = a[i + 1];
+    }
+    a[k - 1] = temp;
+    
+    for (int i = 0; i < n; i++) {
+        cout << a[i] << " ";
+    }
+    
+    return 0;
+}
